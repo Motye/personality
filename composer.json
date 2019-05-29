@@ -1,0 +1,16 @@
+{
+    "name": "trmn/personality",
+    "description": "TRMN personality files for MEDUSA v3.0+",
+    "require": {
+        "nesbot/carbon": "^2.0",
+        "jenssegers/mongodb": "^3.0"
+    },
+    "license": "GNU LGPL v3",
+    "authors": [
+        {
+            "name": "David Weiner",
+            "email": "David.L.Weiner30030@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
