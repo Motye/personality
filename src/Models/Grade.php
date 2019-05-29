@@ -3,8 +3,8 @@
 namespace Personalities\Models;
 
 use Jenssegers\Mongodb\Eloquent\Model as Model;
-use App\Models\MedusaConfig;
-use App\Models\Rating;
+use \App\Models\MedusaConfig;
+use \App\Models\Rating;
 
 /**
  * TRMN Grade Model.
@@ -13,7 +13,7 @@ use App\Models\Rating;
  *
  * @package TRMN/personality
  */
-class Grade extends Medusa\Models\Grade
+class Grade extends \Medusa\Models\Grade
 {
     public static function getRequirements($paygrade2check)
     {
