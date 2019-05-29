@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace Personalities\Models;
 
 use Jenssegers\Mongodb\Eloquent\Model as Model;
 use App\Models\MedusaConfig;
