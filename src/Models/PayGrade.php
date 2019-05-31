@@ -2,20 +2,28 @@
 
 namespace Personalities\Models;
 
-use Jenssegers\Mongodb\Eloquent\Model as Model;
+use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 use \App\Models\MedusaConfig;
 use \App\Models\Rating;
-use \Medusa\Models\Grade as MedusaGrade;
+use \App\Traits\MedusaPayGrade;
 
 /**
- * TRMN Grade Model.
+ * Grade Model.
  *
  * Pay Grades and descriptions
- *
- * @package TRMN/personality
  */
-class Grade extends MedusaGrade
+class PayGrade extends Eloquent
 {
+    use MedusaPayGrade;
+
+    private static $gradeFilters = [
+        'E' => 'Enlisted',
+        'W' => 'Warrant Officer',
+        'O' => 'Officer',
+        'F' => 'Flag Officer',
+        'C' => 'Civilian',
+    ];
+
     public static function getRequirements($paygrade2check)
     {
         $requirements = MedusaConfig::get('pp.requirements');
@@ -41,6 +49,7 @@ class Grade extends MedusaGrade
 
         return $rank_title;
     }
+
 
     /**
      * Shortcut method to get enlisted paygrades.
