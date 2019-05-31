@@ -16,6 +16,11 @@ class PayGrade extends Eloquent
 {
     use MedusaPayGrade;
 
+    /**
+     * @var array Fields that can be set
+     */
+    protected $fillable = ['grade', 'rank'];
+
     private static $gradeFilters = [
         'E' => 'Enlisted',
         'W' => 'Warrant Officer',
